@@ -5,7 +5,7 @@
 - [x] Create `client/index.html` with Semantic HTML5.
 - [x] Create `client/style.css` using a CSS Reset.
 - [x] Define CSS Custom Properties (`:root` variables) for the color scheme.
-- [ ] Build the mobile layout using Flexbox/Grid (sticky header, bottom nav bar).
+- [x] Build the mobile layout using Flexbox/Grid (sticky header, bottom nav bar).
 - [ ] Style the "Study Sessions" feed and "Start Timer" button with dummy HTML data.
 
 ## Phase 2: Client-Side Interactivity (The SPA)
