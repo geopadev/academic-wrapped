@@ -6,68 +6,85 @@
     <link rel="stylesheet" href="style.css" />
     <title>Academic Wrapped</title>
   </head>
-  <body>
-    <header>
-      <h1>Academic Wrapped</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">stats</a></li>
-        <li><button>+</button></li>
-        <li><a href="#">goals</a></li>
-        <li><a href="#">profile</a></li>
-      </ul>
-    </nav>
 
-    <main>
-      <article>
-        <h2>Motivational Quote</h2>
-        <p>
+  <body>
+    <header class="site-header">
+      <h1 class="site-header__title">Academic Wrapped</h1>
+    </header>
+
+    <main class="main-content">
+      <article class="card">
+        <h2 class="card__title">Motivational Quote</h2>
+        <p class="card__body">
           "The only way to do great work is to love what you do." - Steve Jobs
         </p>
-        <h3>Streak</h3>
-        <p>Current Streak: 5 days</p>
+        <h3 class="card__subtitle">Streak</h3>
+        <p class="card__body">Current Streak: 5 days</p>
       </article>
 
-      <article>
-        <h2>Today's Tasks</h2>
-        <ul>
-          <li>
-            <label><input type="checkbox" />Read 20 pages of "Deep Work"</label>
-          </li>
-          <li>
-            <label
-              ><input type="checkbox" />Write a summary of the chapter</label
+      <article class="card">
+        <h2 class="card__title">Today's Tasks</h2>
+        <ul class="card__task-list">
+          <li class="card__task-item">
+            <label class="card__task-label"
+              ><input class="card__task-checkbox" type="checkbox" />Read 20
+              pages of "Deep Work"</label
             >
           </li>
-          <li>
-            <label
-              ><input type="checkbox" />Practice coding for 30 minutes</label
+          <li class="card__task-item">
+            <label class="card__task-label"
+              ><input class="card__task-checkbox" type="checkbox" />Write a
+              summary of the chapter</label
+            >
+          </li>
+          <li class="card__task-item">
+            <label class="card__task-label"
+              ><input class="card__task-checkbox" type="checkbox" />Practice
+              coding for 30 minutes</label
             >
           </li>
         </ul>
       </article>
 
-      <article>
-        <h2>Study Time Chart</h2>
-        <canvas id="study-chart" width="400" height="200"
+      <article class="card">
+        <h2 class="card__title">Study Time Chart</h2>
+        <canvas id="study-chart" class="card__chart" width="400" height="200"
           >how many hours you've studied each day of the week
         </canvas>
       </article>
 
-      <article>
-        <h2>Your Academic Personality</h2>
-        <h3>The Night Owl 🦉</h3>
-        <p>
+      <article class="card">
+        <h2 class="card__title">Your Academic Personality</h2>
+        <h3 class="card__subtitle">The Night Owl 🦉</h3>
+        <p class="card__body">
           You thrive in the late hours, finding your focus and creativity
           peaking when the world is quiet. Embrace your nocturnal nature and
           make the most of those productive nights!
         </p>
       </article>
     </main>
-    <footer>
-      <p>&copy; 2024 Academic Wrapped. All rights reserved.</p>
+    <nav class="bottom-nav">
+      <ul class="bottom-nav__list">
+        <li class="bottom-nav__item">
+          <a class="bottom-nav__link" href="#">home</a>
+        </li>
+        <li class="bottom-nav__item">
+          <a class="bottom-nav__link" href="#">stats</a>
+        </li>
+        <li class="bottom-nav__item bottom-nav__item--cta">
+          <button class="bottom-nav__cta-button">+</button>
+        </li>
+        <li class="bottom-nav__item">
+          <a class="bottom-nav__link" href="#">goals</a>
+        </li>
+        <li class="bottom-nav__item">
+          <a class="bottom-nav__link" href="#">profile</a>
+        </li>
+      </ul>
+    </nav>
+    
+    <footer class="site-footer">
+      <p class="site-footer__body">&copy; 2024 Academic Wrapped. All rights reserved.</p>
     </footer>
   </body>
 </html>

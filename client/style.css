@@ -12,6 +12,9 @@
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
+
+  --header-height: 4rem;
+  --nav-height: 4rem;
 }
 
 * {
@@ -23,6 +26,8 @@
 body {
   font-family: var(--font-base);
   line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 ul {
@@ -32,4 +37,38 @@ ul {
 img {
   display: block;
   max-width: 100%;
+}
+
+.site-header {
+  position: fixed;
+  height: var(--header-height);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-surface);
+  padding: var(--spacing-md);
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-surface);
+  padding: var(--spacing-md) 0;
+}
+
+.bottom-nav__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-content {
+  padding-top: var(--header-height);
+  padding-bottom: var(--nav-height);
+  background-color: var(--color-bg);
+  min-height: 100vh;
 }
