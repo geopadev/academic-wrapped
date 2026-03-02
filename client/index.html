@@ -90,5 +90,54 @@
         </li>
       </ul>
     </nav>
+
+    <div class="timer-modal timer-modal--hidden">
+      <div class="timer-modal__backdrop"></div>
+      <div class="timer-modal__content">
+        <h2 class="timer-modal__title">Timer</h2>
+        <form class="timer-modal__form">
+          <label for="subject-input"
+            >Enter Subject<input
+              id="subject-input"
+              type="text"
+              placeholder="Enter subject name"
+          /></label>
+          
+          <fieldset>
+            <legend>Select Study Technique</legend>
+            <label for="pomodoro-radio"
+              ><input
+                id="pomodoro-radio"
+                type="radio"
+                name="study-technique"
+                value="pomodoro"
+                checked
+              />
+              Pomodoro</label
+            >
+            <label for="flowtime-radio"
+              ><input
+                id="flowtime-radio"
+                type="radio"
+                name="study-technique"
+                value="flowtime"
+              />
+              Flowtime</label
+            >
+            <label for="feynman-radio"
+              ><input
+                id="feynman-radio"
+                type="radio"
+                name="study-technique"
+                value="feynman"
+              />
+              Feynman Technique</label
+            >
+          </fieldset>
+
+          <button type="button">Start Studying</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
