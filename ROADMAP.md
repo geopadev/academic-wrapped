@@ -15,11 +15,11 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 ### Prep (HTML & CSS — before writing any JS)
 
-- [ ] Decide final nav tab structure — max 5 tabs. Current plan: Home, Explore, ➕, Goals, Profile. (Stats moves into Home view as a card.)
-- [ ] Add a `<section id="view-home">` wrapping Home cards, `<section id="view-explore">` for the social feed, `<section id="view-goals">` for goals, `<section id="view-profile">` for profile — each a direct child of `<main>`.
-- [ ] Add `data-target` attributes to each nav `<a>` button linking it to its corresponding view (e.g. `data-target="view-home"`).
-- [ ] Add `.view--hidden` CSS modifier class to `style.css` (`display: none`) for toggling views.
-- [ ] Add `.bottom-nav__item--active` CSS modifier class to `style.css` to highlight the active nav tab.
+- [x] Decide final nav tab structure — max 5 tabs. Current plan: Home, Explore, ➕, Goals, Profile. (Stats moves into Home view as a card.)
+- [x] Add a `<section id="view-home">` wrapping Home cards, `<section id="view-explore">` for the social feed, `<section id="view-goals">` for goals, `<section id="view-profile">` for profile — each a direct child of `<main>`.
+- [x] Add `data-target` attributes to each nav `<a>` button linking it to its corresponding view (e.g. `data-target="view-home"`).
+- [x] Add `.view--hidden` CSS modifier class to `style.css` (`display: none`) for toggling views.
+- [x] Add `.bottom-nav__item--active` CSS modifier class to `style.css` to highlight the active nav tab.
 
 ### View Content (Dummy HTML)
 

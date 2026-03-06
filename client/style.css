@@ -130,3 +130,11 @@ canvas {
 .timer-modal--hidden {
   display: none;
 }
+
+.view--hidden {
+  display: none;
+}
+
+.bottom-nav__item--active .bottom-nav__link {
+  color: var(--color-primary);
+}
