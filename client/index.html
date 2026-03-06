@@ -1,276 +1,260 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Academic Wrapped</title>
-  </head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" />
 
-  <body>
-    <header class="site-header">
-      <h1 class="site-header__title">Academic Wrapped</h1>
-    </header>
+<header class="site-header">
+  <h1 class="site-header__title">Academic Wrapped</h1>
+</header>
 
-    <main class="main-content">
-      <section class="view view--home" id="view-home">
-        <article class="card card--streak">
-          <h2 class="card__title">Motivational Quote</h2>
-          <p class="card__body">
-            "The only way to do great work is to love what you do." - Steve Jobs
-          </p>
-          <h3 class="card__subtitle">Streak</h3>
-          <p class="card__body">Current Streak: 5 days</p>
-        </article>
-
-        <article class="card card--tasks">
-          <h2 class="card__title">Today's Tasks</h2>
-          <ul class="card__task-list">
-            <li class="card__task-item">
-              <label class="card__task-label"
-                ><input class="card__task-checkbox" type="checkbox" />Read 20
-                pages of "Deep Work"</label
-              >
-            </li>
-            <li class="card__task-item">
-              <label class="card__task-label"
-                ><input class="card__task-checkbox" type="checkbox" />Write a
-                summary of the chapter</label
-              >
-            </li>
-            <li class="card__task-item">
-              <label class="card__task-label"
-                ><input class="card__task-checkbox" type="checkbox" />Practice
-                coding for 30 minutes</label
-              >
-            </li>
-          </ul>
-        </article>
-
-        <article class="card card--chart">
-          <h2 class="card__title">Study Time Chart</h2>
-          <canvas id="study-chart" class="card__chart" width="400" height="200"
-            >how many hours you've studied each day of the week
-          </canvas>
-        </article>
-
-        <article class="card card--personality">
-          <h2 class="card__title">Your Academic Personality</h2>
-          <h3 class="card__subtitle">The Night Owl 🦉</h3>
-          <p class="card__body">
-            You thrive in the late hours, finding your focus and creativity
-            peaking when the world is quiet. Embrace your nocturnal nature and
-            make the most of those productive nights!
-          </p>
-        </article>
-      </section>
-
-      <section class="view view--explore" id="view-explore">
-        <section class="stories">
-          <ul class="stories__list">
-            <li class="stories__item">
-              <button class="stories__avatar-button">
-                <img src="" alt="Friend's Avatar" />
-              </button>
-            </li>
-
-            <li class="stories__item">
-              <button class="stories__avatar-button">
-                <img src="" alt="Friend's Avatar" />
-              </button>
-            </li>
-
-            <li class="stories__item">
-              <button class="stories__avatar-button">
-                <img src="" alt="Friend's Avatar" />
-              </button>
-            </li>
-          </ul>
-        </section>
-
-        <h2 class="view__title">Explore</h2>
-        <p class="view__body">Discover what your friends have been up to!</p>
-
-        <section class="activity-feed">
-          <article class="activity-feed__post">
-            <img src="" alt="" class="activity-feed__post-avatar" />
-            <p class="activity-feed__post-name">
-              <strong>Jane Doe</strong>
-            </p>
-            <p class="activity-feed__post-action">
-              completed a Pomodoro session
-            </p>
-            <p class="activity-feed__post-subject">Subject: Calculus</p>
-            <p class="activity-feed__post-duration">Duration: 25 minutes</p>
-            <time
-              datetime="2023-10-10T14:30:00Z"
-              class="activity-feed__post-datetime"
-              >October 10, 2023</time
-            >
-          </article>
-
-          <article class="activity-feed__post">
-            <img src="" alt="" class="activity-feed__post-avatar" />
-            <p class="activity-feed__post-name">
-              <strong>John Smith</strong>
-            </p>
-            <p class="activity-feed__post-action">
-              completed a Flowtime session
-            </p>
-            <p class="activity-feed__post-subject">Subject: History</p>
-            <p class="activity-feed__post-duration">Duration: 90 minutes</p>
-            <time
-              datetime="2023-10-09T18:00:00Z"
-              class="activity-feed__post-datetime"
-              >October 9, 2023</time
-            >
-          </article>
-        </section>
-      </section>
-      <section class="view view--goals" id="view-goals">
-        <h2 class="view__title">Your Goals</h2>
-        <ul class="goals-list">
-          <li class="goals-list__item">
-            <h3 class="goals-list__item-title">Read 5 Books This Month</h3>
-            <progress
-              value="3"
-              max="5"
-              class="goals-list__item-progress"
-            ></progress>
-          </li>
-
-          <li class="goals-list__item">
-            <h3 class="goals-list__item-title">
-              Complete 20 Pomodoro Sessions
-            </h3>
-            <progress
-              value="12"
-              max="20"
-              class="goals-list__item-progress"
-            ></progress>
-          </li>
-
-          <li class="goals-list__item">
-            <h3 class="goals-list__item-title">Write 10,000 Words</h3>
-            <progress
-              value="7"
-              max="10"
-              class="goals-list__item-progress"
-            ></progress>
-          </li>
-        </ul>
-      </section>
-
-      <section class="view view--profile" id="view-profile">
-        <header class="profile-header">
-          <img src="" alt="User Avatar" class="profile-header__avatar" />
-          <h2 class="profile-header__username">Your Name</h2>
-          <button class="profile-header__edit-button">Edit Profile</button>
-        </header>
-
-        <article class="card card--profile">
-          <dl class="profile-stats">
-            <dt class="profile-stats__term">Total Study Time</dt>
-            <dd class="profile-stats__definition">120 hours</dd>
-            
-            <dt class="profile-stats__term">Sessions Logged</dt>
-            <dd class="profile-stats__definition">25 sessions</dd>
-
-            <dt class="profile-stats__term">Favourite Subject</dt>
-            <dd class="profile-stats__definition">Mathematics</dd>
-
-            <dt class="profile-stats__term">Current Streak</dt>
-            <dd class="profile-stats__definition">5 days</dd>
-
-            <dt class="profile-stats__term">Academic Personality</dt>
-            <dd class="profile-stats__definition">The Night Owl 🦉</dd>
-          </dl>
-
-          
-        </article>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <p class="site-footer__body">
-        &copy; 2024 Academic Wrapped. All rights reserved.
+<main class="main-content">
+  <section class="view view--home" id="view-home">
+    <article class="card card--streak">
+      <h2 class="card__title">Motivational Quote</h2>
+      <p class="card__body">
+        "The only way to do great work is to love what you do." - Steve Jobs
       </p>
-      <p class="site-footer__body">Made with ❤️ by Academic Wrapped Team</p>
-      <p class="site-footer__body">Version 1.0.0</p>
-    </footer>
+      <h3 class="card__subtitle">Streak</h3>
+      <p class="card__body">Current Streak: 5 days</p>
+    </article>
 
-    <nav class="bottom-nav">
-      <ul class="bottom-nav__list">
-        <li class="bottom-nav__item">
-          <a class="bottom-nav__link" href="#" data-target="view-home">home</a>
-        </li>
-        <li class="bottom-nav__item">
-          <a class="bottom-nav__link" href="#" data-target="view-explore"
-            >explore</a
+    <article class="card card--tasks">
+      <h2 class="card__title">Today's Tasks</h2>
+      <ul class="card__task-list">
+        <li class="card__task-item">
+          <label class="card__task-label"
+            ><input class="card__task-checkbox" type="checkbox" />Read 20 pages
+            of "Deep Work"</label
           >
         </li>
-        <li class="bottom-nav__item bottom-nav__item--cta">
-          <button class="bottom-nav__cta-button">+</button>
-        </li>
-        <li class="bottom-nav__item">
-          <a class="bottom-nav__link" href="#" data-target="view-goals"
-            >goals</a
+        <li class="card__task-item">
+          <label class="card__task-label"
+            ><input class="card__task-checkbox" type="checkbox" />Write a
+            summary of the chapter</label
           >
         </li>
-        <li class="bottom-nav__item">
-          <a class="bottom-nav__link" href="#" data-target="view-profile"
-            >profile</a
+        <li class="card__task-item">
+          <label class="card__task-label"
+            ><input class="card__task-checkbox" type="checkbox" />Practice
+            coding for 30 minutes</label
           >
         </li>
       </ul>
-    </nav>
+    </article>
 
-    <div class="timer-modal timer-modal--hidden">
-      <div class="timer-modal__backdrop"></div>
-      <div class="timer-modal__content">
-        <h2 class="timer-modal__title">Timer</h2>
-        <form class="timer-modal__form">
-          <label for="subject-input"
-            >Enter Subject<input
-              id="subject-input"
-              type="text"
-              placeholder="Enter subject name"
-          /></label>
+    <article class="card card--chart">
+      <h2 class="card__title">Study Time Chart</h2>
+      <canvas id="study-chart" class="card__chart" width="400" height="200"
+        >how many hours you've studied each day of the week
+      </canvas>
+    </article>
 
-          <fieldset>
-            <legend>Select Study Technique</legend>
-            <label for="pomodoro-radio"
-              ><input
-                id="pomodoro-radio"
-                type="radio"
-                name="study-technique"
-                value="pomodoro"
-                checked
-              />
-              Pomodoro</label
-            >
-            <label for="flowtime-radio"
-              ><input
-                id="flowtime-radio"
-                type="radio"
-                name="study-technique"
-                value="flowtime"
-              />
-              Flowtime</label
-            >
-            <label for="feynman-radio"
-              ><input
-                id="feynman-radio"
-                type="radio"
-                name="study-technique"
-                value="feynman"
-              />
-              Feynman Technique</label
-            >
-          </fieldset>
+    <article class="card card--personality">
+      <h2 class="card__title">Your Academic Personality</h2>
+      <h3 class="card__subtitle">The Night Owl 🦉</h3>
+      <p class="card__body">
+        You thrive in the late hours, finding your focus and creativity peaking
+        when the world is quiet. Embrace your nocturnal nature and make the most
+        of those productive nights!
+      </p>
+    </article>
+  </section>
 
-          <button type="button">Start Studying</button>
-        </form>
-      </div>
-    </div>
-  </body>
-</html>
+  <section class="view view--explore" id="view-explore">
+    <section class="stories">
+      <ul class="stories__list">
+        <li class="stories__item">
+          <button class="stories__avatar-button">
+            <img src="" alt="Friend's Avatar" />
+          </button>
+        </li>
+
+        <li class="stories__item">
+          <button class="stories__avatar-button">
+            <img src="" alt="Friend's Avatar" />
+          </button>
+        </li>
+
+        <li class="stories__item">
+          <button class="stories__avatar-button">
+            <img src="" alt="Friend's Avatar" />
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <h2 class="view__title">Explore</h2>
+    <p class="view__body">Discover what your friends have been up to!</p>
+
+    <section class="activity-feed">
+      <article class="activity-feed__post">
+        <img src="" alt="" class="activity-feed__post-avatar" />
+        <p class="activity-feed__post-name">
+          <strong>Jane Doe</strong>
+        </p>
+        <p class="activity-feed__post-action">completed a Pomodoro session</p>
+        <p class="activity-feed__post-subject">Subject: Calculus</p>
+        <p class="activity-feed__post-duration">Duration: 25 minutes</p>
+        <time
+          datetime="2023-10-10T14:30:00Z"
+          class="activity-feed__post-datetime"
+          >October 10, 2023</time
+        >
+      </article>
+
+      <article class="activity-feed__post">
+        <img src="" alt="" class="activity-feed__post-avatar" />
+        <p class="activity-feed__post-name">
+          <strong>John Smith</strong>
+        </p>
+        <p class="activity-feed__post-action">completed a Flowtime session</p>
+        <p class="activity-feed__post-subject">Subject: History</p>
+        <p class="activity-feed__post-duration">Duration: 90 minutes</p>
+        <time
+          datetime="2023-10-09T18:00:00Z"
+          class="activity-feed__post-datetime"
+          >October 9, 2023</time
+        >
+      </article>
+    </section>
+  </section>
+  <section class="view view--goals" id="view-goals">
+    <h2 class="view__title">Your Goals</h2>
+    <ul class="goals-list">
+      <li class="goals-list__item">
+        <h3 class="goals-list__item-title">Read 5 Books This Month</h3>
+        <progress
+          value="3"
+          max="5"
+          class="goals-list__item-progress"
+        ></progress>
+      </li>
+
+      <li class="goals-list__item">
+        <h3 class="goals-list__item-title">Complete 20 Pomodoro Sessions</h3>
+        <progress
+          value="12"
+          max="20"
+          class="goals-list__item-progress"
+        ></progress>
+      </li>
+
+      <li class="goals-list__item">
+        <h3 class="goals-list__item-title">Write 10,000 Words</h3>
+        <progress
+          value="7"
+          max="10"
+          class="goals-list__item-progress"
+        ></progress>
+      </li>
+    </ul>
+  </section>
+
+  <section class="view view--profile" id="view-profile">
+    <header class="profile-header">
+      <img src="" alt="User Avatar" class="profile-header__avatar" />
+      <h2 class="profile-header__username">Your Name</h2>
+      <button class="profile-header__edit-button">Edit Profile</button>
+    </header>
+
+    <article class="card card--profile">
+      <dl class="profile-stats">
+        <dt class="profile-stats__term">Total Study Time</dt>
+        <dd class="profile-stats__definition">120 hours</dd>
+
+        <dt class="profile-stats__term">Sessions Logged</dt>
+        <dd class="profile-stats__definition">25 sessions</dd>
+
+        <dt class="profile-stats__term">Favourite Subject</dt>
+        <dd class="profile-stats__definition">Mathematics</dd>
+
+        <dt class="profile-stats__term">Current Streak</dt>
+        <dd class="profile-stats__definition">5 days</dd>
+
+        <dt class="profile-stats__term">Academic Personality</dt>
+        <dd class="profile-stats__definition">The Night Owl 🦉</dd>
+      </dl>
+    </article>
+  </section>
+</main>
+<footer class="site-footer">
+  <p class="site-footer__body">
+    &copy; 2024 Academic Wrapped. All rights reserved.
+  </p>
+  <p class="site-footer__body">Made with ❤️ by Academic Wrapped Team</p>
+  <p class="site-footer__body">Version 1.0.0</p>
+</footer>
+
+<nav class="bottom-nav">
+  <ul class="bottom-nav__list">
+    <li class="bottom-nav__item">
+      <a class="bottom-nav__link" href="#" data-target="view-home">home</a>
+    </li>
+    <li class="bottom-nav__item">
+      <a class="bottom-nav__link" href="#" data-target="view-explore"
+        >explore</a
+      >
+    </li>
+    <li class="bottom-nav__item bottom-nav__item--cta">
+      <button class="bottom-nav__cta-button">+</button>
+    </li>
+    <li class="bottom-nav__item">
+      <a class="bottom-nav__link" href="#" data-target="view-goals">goals</a>
+    </li>
+    <li class="bottom-nav__item">
+      <a class="bottom-nav__link" href="#" data-target="view-profile"
+        >profile</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<div class="timer-modal timer-modal--hidden">
+  <div class="timer-modal__backdrop"></div>
+  <div class="timer-modal__content">
+    <h2 class="timer-modal__title">Timer</h2>
+    <form class="timer-modal__form">
+      <label for="subject-input"
+        >Enter Subject<input
+          id="subject-input"
+          type="text"
+          placeholder="Enter subject name"
+      /></label>
+
+      <fieldset>
+        <legend>Select Study Technique</legend>
+        <label for="pomodoro-radio"
+          ><input
+            id="pomodoro-radio"
+            type="radio"
+            name="study-technique"
+            value="pomodoro"
+            checked
+          />
+          Pomodoro</label
+        >
+        <label for="flowtime-radio"
+          ><input
+            id="flowtime-radio"
+            type="radio"
+            name="study-technique"
+            value="flowtime"
+          />
+          Flowtime</label
+        >
+        <label for="feynman-radio"
+          ><input
+            id="feynman-radio"
+            type="radio"
+            name="study-technique"
+            value="feynman"
+          />
+          Feynman Technique</label
+        >
+      </fieldset>
+
+      <button type="button">Start Studying</button>
+    </form>
+  </div>
+</div>
+<script type="module" src="script.js"></script>

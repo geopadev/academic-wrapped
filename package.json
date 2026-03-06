@@ -1,0 +1,23 @@
+{
+  "name": "academic-wrapped",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geopadev/academic-wrapped.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geopadev/academic-wrapped/issues"
+  },
+  "homepage": "https://github.com/geopadev/academic-wrapped#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
