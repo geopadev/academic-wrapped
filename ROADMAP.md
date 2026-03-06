@@ -23,7 +23,7 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 ### View Content (Dummy HTML)
 
-- [ ] **Home view** — motivational quote/streak card, today's tasks card, study time chart card (with Stats data), academic personality card.
+- [x] **Home view** — motivational quote/streak card, today's tasks card, study time chart card (with Stats data), academic personality card.
 - [ ] **Explore view** — two distinct sections:
   - _Weekly Wrapped Stories row_ — horizontal scrollable `<ul>` of friend avatar buttons at the top of the view. Tapping one opens that friend's weekly Wrapped summary (total hours, top subject, streak, personality type).
   - _Activity Feed_ — chronological scroll of friend activity posts (Strava/BeReal style). Each post is an `<article>` showing: friend avatar, friend name, activity (e.g. "completed a Pomodoro session"), subject, duration, and timestamp.
