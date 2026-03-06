@@ -138,3 +138,15 @@ canvas {
 .bottom-nav__item--active .bottom-nav__link {
   color: var(--color-primary);
 }
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .profile-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}

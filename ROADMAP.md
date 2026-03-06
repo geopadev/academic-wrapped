@@ -27,8 +27,8 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 - [x] **Explore view** — two distinct sections:
   - _Weekly Wrapped Stories row_ — horizontal scrollable `<ul>` of friend avatar buttons at the top of the view. Tapping one opens that friend's weekly Wrapped summary (total hours, top subject, streak, personality type).
   - _Activity Feed_ — chronological scroll of friend activity posts (Strava/BeReal style). Each post is an `<article>` showing: friend avatar, friend name, activity (e.g. "completed a Pomodoro session"), subject, duration, and timestamp.
-- [ ] **Goals view** — list of user-set study goals with progress indicators.
-- [ ] **Profile view** — user's own weekly Wrapped summary: total hours, sessions logged, favourite subject, current streak, academic personality type.
+- [x] **Goals view** — list of user-set study goals with progress indicators.
+- [x] **Profile view** — user's own weekly Wrapped summary: total hours, sessions logged, favourite subject, current streak, academic personality type.
 
 ### JavaScript
 
