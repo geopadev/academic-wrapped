@@ -34,7 +34,7 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 - [x] Create `client/script.js` and link it to `index.html` using `<script type="module" defer>`.
 - [x] Build Navigation Logic: select all nav buttons with `querySelectorAll`, attach click listeners, use "hide all then show one" pattern with `data-target` to toggle `.view--hidden`.
-- [ ] Build Timer Modal Logic: open modal when `+` button is clicked (remove `.timer-modal--hidden`), close when backdrop is clicked or modal is dismissed.
+- [x] Build Timer Modal Logic: open modal when `+` button is clicked (remove `.timer-modal--hidden`), close when backdrop is clicked or modal is dismissed.
 - [ ] Build the Focus Timer: use `setInterval` to create a countdown timer based on selected study technique (Pomodoro = 25 min, etc.).
 - [ ] Create a dummy JS array for past study sessions and friend activity posts.
 - [ ] Write a `renderSessions()` function to dynamically generate `<article>` HTML for each session and inject into the Explore view using `document.createElement`.
