@@ -15,6 +15,7 @@ If I use the following, my code will fail review. You must NEVER suggest:
 * `XMLHttpRequest` (Only use the modern `fetch()` API).
 * `document.write()` (Use modern DOM manipulation like `document.createElement`).
 * `require()` on the frontend (Use ES6 `import`/`export` instead).
+* `alert()`, `prompt()`, `confirm()` — these are blocking browser dialogs. All user feedback must be done through DOM manipulation (e.g. updating `textContent`, toggling classes, creating elements). Never use popup dialogs.
 
 ## 3. Architecture & Staged Build
 * **Phase 1:** Static UI prototype using dummy data. Do not suggest setting up a database yet.
