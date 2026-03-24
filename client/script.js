@@ -6,6 +6,7 @@ const timerModalBackdrop = document.querySelector(".timer-modal__backdrop");
 const timerModalCountdown = document.querySelector(".timer-modal__countdown");
 const timerModalStart = document.querySelector(".timer-modal__start");
 const timerModalForm = document.querySelector(".timer-modal__form");
+const timerModalStop = document.querySelector(".timer-modal__stop");
 
 let timeRemaining = 0;
 let intervalId = null;
@@ -70,6 +71,16 @@ timerModalStart.addEventListener("click", (event) => {
   }
 });
 
+timerModalStop.addEventListener("click", (event) => {
+  clearInterval(intervalId);
+  timeRemaining = 0;
+  currentPhase = "work";
+  completedSessions = 0;
+  showElement(timerModalForm, "timer-modal__form--hidden");
+  hideElement(timerModalCountdown, "timer-modal__countdown--hidden");
+  hideElement(timerModalStop, "timer-modal__stop--hidden");
+});
+
 function showElement(el, className) {
   el.classList.remove(className);
 }
@@ -82,6 +93,7 @@ function startPomodoro() {
   timeRemaining = DURATIONS.pomodoro;
   hideElement(timerModalForm, "timer-modal__form--hidden");
   showElement(timerModalCountdown, "timer-modal__countdown--hidden");
+  showElement(timerModalStop, "timer-modal__stop--hidden");
   startTicking();
 }
 

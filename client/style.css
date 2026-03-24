@@ -135,6 +135,10 @@ canvas {
   display: none;
 }
 
+.timer-modal__stop--hidden {
+  display: none;
+}
+
 .view--hidden {
   display: none;
 }
