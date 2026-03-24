@@ -9,6 +9,8 @@ const timerModalForm = document.querySelector(".timer-modal__form");
 
 let timeRemaining = 0;
 let intervalId = null;
+let currentPhase = "work";
+let completedSessions = 0;
 
 const DURATIONS = {
   pomodoro: 1500,
@@ -48,7 +50,43 @@ timerModalStart.addEventListener("click", (event) => {
   const checkedRadio = document.querySelector(
     'input[name="study-technique"]:checked',
   ).value;
-  timeRemaining = DURATIONS[checkedRadio];
+
+  switch (checkedRadio) {
+    case "pomodoro":
+      startPomodoro();
+      break;
+    case "flowtime":
+      startFlowtime();
+      break;
+    case "feynman":
+      startFeynman();
+      break;
+    default:
+      console.log(`unknown technique ${checkedRadio}`);
+  }
 });
+
+function showElement(el, className) {
+  el.classList.remove(className);
+}
+
+function hideElement(el, className) {
+  el.classList.add(className);
+}
+
+function startPomodoro() {
+  timeRemaining = DURATIONS.pomodoro;
+  hideElement(timerModalForm, "timer-modal__form--hidden");
+  showElement(timerModalCountdown, "timer-modal__countdown--hidden");
+  intervalId = setInterval(() => {
+    timeRemaining--;
+    timerModalCountdown.textContent = timeRemaining;
+    if (timeRemaining <= 0) {
+      clearInterval(intervalId);
+    }
+  }, 1000);
+}
+
+
 
 showView("view-home");
