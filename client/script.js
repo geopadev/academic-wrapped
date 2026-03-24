@@ -18,6 +18,10 @@ const DURATIONS = {
   feynman: null,
 };
 
+const BREAKS = {
+  pomodoro: { short: 300, long: 900 },
+};
+
 function showView(viewId) {
   for (const view of views) {
     view.classList.add("view--hidden");
@@ -78,11 +82,34 @@ function startPomodoro() {
   timeRemaining = DURATIONS.pomodoro;
   hideElement(timerModalForm, "timer-modal__form--hidden");
   showElement(timerModalCountdown, "timer-modal__countdown--hidden");
+  startTicking();
+}
+
+function startTicking() {
   intervalId = setInterval(() => {
     timeRemaining--;
     timerModalCountdown.textContent = formatTime(timeRemaining);
     if (timeRemaining <= 0) {
       clearInterval(intervalId);
+
+      switch (currentPhase) {
+        case "work":
+          completedSessions++;
+          if (completedSessions % 4 === 0) {
+            timeRemaining = BREAKS.pomodoro.long;
+          } else {
+            timeRemaining = BREAKS.pomodoro.short;
+          }
+          currentPhase = "break";
+          playBeep();
+          break;
+        case "break":
+          currentPhase = "work";
+          playBeep();
+          timeRemaining = DURATIONS.pomodoro;
+          break;
+      }
+      startTicking();
     }
   }, 1000);
 }
@@ -91,6 +118,14 @@ function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
   return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+}
+
+function playBeep() {
+  const audioContext = new AudioContext();
+  const sound = audioContext.createOscillator();
+  sound.connect(audioContext.destination);
+  sound.start();
+  sound.stop(audioContext.currentTime + 0.3);
 }
 
 showView("view-home");
