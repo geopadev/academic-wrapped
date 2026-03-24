@@ -80,13 +80,17 @@ function startPomodoro() {
   showElement(timerModalCountdown, "timer-modal__countdown--hidden");
   intervalId = setInterval(() => {
     timeRemaining--;
-    timerModalCountdown.textContent = timeRemaining;
+    timerModalCountdown.textContent = formatTime(timeRemaining);
     if (timeRemaining <= 0) {
       clearInterval(intervalId);
     }
   }, 1000);
 }
 
-
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+}
 
 showView("view-home");
