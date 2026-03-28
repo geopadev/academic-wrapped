@@ -24,6 +24,35 @@ const BREAKS = {
   pomodoro: { short: 300, long: 900 },
 };
 
+const feedPosts = [
+  {
+    avatar: "url",
+    username: "John Doe",
+    action: "completed a pomodoro session",
+    subject: "maths",
+    duration: "25 min",
+    date: "2023-10-10",
+  },
+
+  {
+    avatar: "url",
+    username: "Jane Smith",
+    action: "started a flowtime session",
+    subject: "history",
+    duration: "45 min",
+    date: "2023-10-11",
+  },
+
+  {
+    avatar: "url",
+    username: "Alice Johnson",
+    action: "completed a feynman session",
+    subject: "physics",
+    duration: "30 min",
+    date: "2023-10-12",
+  },
+];
+
 function showView(viewId) {
   for (const view of views) {
     view.classList.add("view--hidden");
@@ -83,8 +112,6 @@ timerModalStart.addEventListener("click", (event) => {
       console.log(`unknown technique ${checkedRadio}`);
   }
 });
-
-
 
 function showElement(el, className) {
   el.classList.remove(className);

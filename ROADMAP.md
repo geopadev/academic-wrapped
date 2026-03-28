@@ -35,7 +35,7 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 - [x] Create `client/script.js` and link it to `index.html` using `<script type="module" defer>`.
 - [x] Build Navigation Logic: select all nav buttons with `querySelectorAll`, attach click listeners, use "hide all then show one" pattern with `data-target` to toggle `.view--hidden`.
 - [x] Build Timer Modal Logic: open modal when `+` button is clicked (remove `.timer-modal--hidden`), close when backdrop is clicked or modal is dismissed.
-- [ ] Build the Focus Timer: use `setInterval` to create a countdown timer based on selected study technique (Pomodoro = 25 min, etc.).
+- [x] Build the Focus Timer: Pomodoro countdown with `setInterval`, phase transitions (work→break→work), long break every 4 sessions, audio notification via Web Audio API. Timer displays in site header; CTA button doubles as stop button. (Flowtime & Feynman deferred to Phase 5.)
 - [ ] Create a dummy JS array for past study sessions and friend activity posts.
 - [ ] Write a `renderSessions()` function to dynamically generate `<article>` HTML for each session and inject into the Explore view using `document.createElement`.
 
@@ -52,3 +52,8 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 - [ ] Set up WebSockets (`ws` library) on the server to push live studying notifications to the client.
 - [ ] Add a Service Worker and `manifest.json` to make the app an installable PWA with offline support via `localStorage`.
 - [ ] (Final Step) Replace `data.json` with PostgreSQL and Prisma.
+
+## Phase 5: Additional Study Techniques
+
+- [ ] Implement Flowtime technique (count-up timer + scaled break suggestions based on elapsed time).
+- [ ] Implement Feynman technique (4-step guided checklist with checkboxes, no timer).
