@@ -3,15 +3,16 @@ const navLinks = document.querySelectorAll(".bottom-nav__link");
 const timerModal = document.querySelector(".timer-modal");
 const ctaButton = document.querySelector(".bottom-nav__cta-button");
 const timerModalBackdrop = document.querySelector(".timer-modal__backdrop");
-const timerModalCountdown = document.querySelector(".timer-modal__countdown");
 const timerModalStart = document.querySelector(".timer-modal__start");
 const timerModalForm = document.querySelector(".timer-modal__form");
-const timerModalStop = document.querySelector(".timer-modal__stop");
+const siteHeaderCountdown = document.querySelector(".site-header__countdown");
+const siteHeaderTitle = document.querySelector(".site-header__title");
 
 let timeRemaining = 0;
 let intervalId = null;
 let currentPhase = "work";
 let completedSessions = 0;
+let isTimerRunning = false;
 
 const DURATIONS = {
   pomodoro: 1500,
@@ -44,7 +45,19 @@ for (const navLink of navLinks) {
 }
 
 ctaButton.addEventListener("click", (event) => {
-  timerModal.classList.remove("timer-modal--hidden");
+  if (isTimerRunning === true) {
+    clearInterval(intervalId);
+    timeRemaining = 0;
+    currentPhase = "work";
+    completedSessions = 0;
+
+    isTimerRunning = false;
+    showElement(siteHeaderTitle, "site-header__title--hidden");
+    hideElement(siteHeaderCountdown, "site-header__countdown--hidden");
+    ctaButton.textContent = "+";
+  } else {
+    timerModal.classList.remove("timer-modal--hidden");
+  }
 });
 
 timerModalBackdrop.addEventListener("click", (event) => {
@@ -71,15 +84,7 @@ timerModalStart.addEventListener("click", (event) => {
   }
 });
 
-timerModalStop.addEventListener("click", (event) => {
-  clearInterval(intervalId);
-  timeRemaining = 0;
-  currentPhase = "work";
-  completedSessions = 0;
-  showElement(timerModalForm, "timer-modal__form--hidden");
-  hideElement(timerModalCountdown, "timer-modal__countdown--hidden");
-  hideElement(timerModalStop, "timer-modal__stop--hidden");
-});
+timerModalStop.addEventListener("click", (event) => {});
 
 function showElement(el, className) {
   el.classList.remove(className);
