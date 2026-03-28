@@ -84,7 +84,7 @@ timerModalStart.addEventListener("click", (event) => {
   }
 });
 
-timerModalStop.addEventListener("click", (event) => {});
+
 
 function showElement(el, className) {
   el.classList.remove(className);
@@ -96,16 +96,18 @@ function hideElement(el, className) {
 
 function startPomodoro() {
   timeRemaining = DURATIONS.pomodoro;
-  hideElement(timerModalForm, "timer-modal__form--hidden");
-  showElement(timerModalCountdown, "timer-modal__countdown--hidden");
-  showElement(timerModalStop, "timer-modal__stop--hidden");
+  hideElement(timerModal, "timer-modal--hidden");
+  hideElement(siteHeaderTitle, "site-header__title--hidden");
+  showElement(siteHeaderCountdown, "site-header__countdown--hidden");
+  ctaButton.textContent = "■";
+  isTimerRunning = true;
   startTicking();
 }
 
 function startTicking() {
   intervalId = setInterval(() => {
     timeRemaining--;
-    timerModalCountdown.textContent = formatTime(timeRemaining);
+    siteHeaderCountdown.textContent = formatTime(timeRemaining);
     if (timeRemaining <= 0) {
       clearInterval(intervalId);
 

@@ -143,6 +143,14 @@ canvas {
   display: none;
 }
 
+.site-header__title--hidden {
+  display: none;
+}
+
+.site-header__countdown--hidden {
+  display: none;
+}
+
 .bottom-nav__item--active .bottom-nav__link {
   color: var(--color-primary);
 }
