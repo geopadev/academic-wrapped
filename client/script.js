@@ -195,16 +195,20 @@ function renderFeedPosts() {
 
     const feedPostSubj = document.createElement("p");
     feedPostSubj.classList.add("activity-feed__post-subject");
-    feedPostSubj.textContent = post.subject;
+    feedPostSubj.textContent = `Subject: ${post.subject}`;
 
     const feedPostDuration = document.createElement("p");
     feedPostDuration.classList.add("activity-feed__post-duration");
-    feedPostDuration.textContent = post.duration;
+    feedPostDuration.textContent = `Duration: ${post.duration} minutes`;
 
     const feedPostTime = document.createElement("time");
     feedPostTime.classList.add("activity-feed__post-datetime");
     feedPostTime.setAttribute("datetime", post.date);
-    feedPostTime.textContent = post.date;
+    feedPostTime.textContent = new Date(post.date).toLocaleDateString("en-GB", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
 
     feedPostName.appendChild(feedPostUsername);
     feedPost.append(
