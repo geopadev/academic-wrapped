@@ -14,6 +14,7 @@ let intervalId = null;
 let currentPhase = "work";
 let completedSessions = 0;
 let isTimerRunning = false;
+let subject = "";
 
 const DURATIONS = {
   pomodoro: 1500,
@@ -70,9 +71,10 @@ timerModalStart.addEventListener("click", (event) => {
     'input[name="study-technique"]:checked',
   ).value;
 
+  const subjectInput = document.querySelector("#subject-input").value;
   switch (checkedRadio) {
     case "pomodoro":
-      startPomodoro();
+      startPomodoro(subjectInput);
       break;
     case "flowtime":
       startFlowtime();
@@ -93,7 +95,8 @@ function hideElement(el, className) {
   el.classList.add(className);
 }
 
-function startPomodoro() {
+function startPomodoro(selectedSubject) {
+  subject = selectedSubject;
   timeRemaining = DURATIONS.pomodoro;
   hideElement(timerModal, "timer-modal--hidden");
   hideElement(siteHeaderTitle, "site-header__title--hidden");

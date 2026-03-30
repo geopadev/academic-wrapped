@@ -32,9 +32,13 @@ const feedPosts = [
 ];
 
 app.use(express.static("client"));
-
+app.use(express.json());
 app.get("/api/sessions", (req, res) => {
   res.json(feedPosts);
+});
+app.post("/api/sessions", (req, res) => {
+  feedPosts.push(req.body);
+  res.json(req.body);
 });
 
 app.listen(8080);
