@@ -7,6 +7,7 @@ const timerModalStart = document.querySelector(".timer-modal__start");
 const timerModalForm = document.querySelector(".timer-modal__form");
 const siteHeaderCountdown = document.querySelector(".site-header__countdown");
 const siteHeaderTitle = document.querySelector(".site-header__title");
+const activityFeed = document.querySelector(".activity-feed");
 
 let timeRemaining = 0;
 let intervalId = null;
@@ -174,4 +175,50 @@ function playBeep() {
   sound.stop(audioContext.currentTime + 0.3);
 }
 
+function renderFeedPosts() {
+  for (const post of feedPosts) {
+    const feedPost = document.createElement("article");
+    feedPost.classList.add("activity-feed__post");
+
+    const feedPostAvatar = document.createElement("img");
+    feedPostAvatar.classList.add("activity-feed__post-avatar");
+    feedPostAvatar.setAttribute("src", post.avatar);
+
+    const feedPostName = document.createElement("p");
+    feedPostName.classList.add("activity-feed__post-name");
+    const feedPostUsername = document.createElement("strong");
+    feedPostUsername.textContent = post.username;
+
+    const feedPostAction = document.createElement("p");
+    feedPostAction.classList.add("activity-feed__post-action");
+    feedPostAction.textContent = post.action;
+
+    const feedPostSubj = document.createElement("p");
+    feedPostSubj.classList.add("activity-feed__post-subject");
+    feedPostSubj.textContent = post.subject;
+
+    const feedPostDuration = document.createElement("p");
+    feedPostDuration.classList.add("activity-feed__post-duration");
+    feedPostDuration.textContent = post.duration;
+
+    const feedPostTime = document.createElement("time");
+    feedPostTime.classList.add("activity-feed__post-datetime");
+    feedPostTime.setAttribute("datetime", post.date);
+    feedPostTime.textContent = post.date;
+
+    feedPostName.appendChild(feedPostUsername);
+    feedPost.append(
+      feedPostAvatar,
+      feedPostName,
+      feedPostAction,
+      feedPostSubj,
+      feedPostDuration,
+      feedPostTime,
+    );
+
+    activityFeed.appendChild(feedPost);
+  }
+}
+
 showView("view-home");
+renderFeedPosts();
