@@ -47,6 +47,18 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 - [x] Write a `POST /api/sessions` Express route to save a new completed focus session.
 - [x] Update `client/script.js` to use the `fetch()` API to talk to these endpoints.
 
+## Phase 3.1: Hardening & Modularisation
+
+- [ ] **[HIGH]** Add `response.ok` check and fallback to `renderFeedPosts()`.
+- [ ] **[HIGH]** Add `response.ok` check to `postSession()` and re-render feed after successful POST.
+- [ ] **[HIGH]** Add `try/catch` to `server.mjs` file operations with appropriate HTTP error status codes.
+- [ ] **[MEDIUM]** Fix subject scope — capture `#subject-input` value and store in module-level variable when timer starts.
+- [ ] **[MEDIUM]** Clear `.activity-feed` before re-rendering in `renderFeedPosts()` to prevent duplicate posts.
+- [ ] **[MEDIUM]** Modularise `client/script.js` into ES6 modules: `js/timer.js`, `js/navigation.js`, `js/api.js`, `js/app.js`.
+- [ ] **[LOW]** Pretty-print `data.json` using `JSON.stringify(sessions, null, 2)`.
+- [ ] **[LOW]** Fix `package.json` `main` field to point to `server.mjs`.
+- [ ] **[LOW]** Update `CLAUDE.md` to reflect Phase 3 complete and new module structure.
+
 ## Phase 4: Real-Time & Advanced Features
 
 - [ ] Set up WebSockets (`ws` library) on the server to push live studying notifications to the client.
