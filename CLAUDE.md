@@ -31,24 +31,24 @@ The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--
 
 **Semantic HTML:** Use `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>` appropriately.
 
-## Current State (Phase 2 in progress)
+## Current State (Phase 2 complete, Phase 3 starting)
 
 **Done:**
 - Full mobile UI shell (fixed header, bottom tab nav, scrollable main, timer modal)
 - Navigation logic — `showView()`, `data-target` nav links, `.bottom-nav__item--active` toggling
 - Timer modal open/close — CTA button opens, backdrop closes
 - Pomodoro timer — `startPomodoro()`, `startTicking()`, phase transitions (work→break→work), `BREAKS` object, `playBeep()` via Web Audio API
+- Timer UI in header — countdown replaces title during active session, CTA button doubles as stop button via `isTimerRunning` flag
 - `formatTime(seconds)` → `MM:SS` string
 - `showElement(el, className)` / `hideElement(el, className)` helper functions
-
-**In progress:**
-- Refactoring timer UI: countdown moves to `site-header__countdown` in the header (replaces `site-header__title` during active session), CTA button repurposed as stop button (`isTimerRunning` flag controls dual behaviour)
-- Flowtime (count-up + break suggestion) and Feynman (checklist) not yet implemented
+- `feedPosts` dummy array — 3 objects with avatar, username, action, subject, duration (number, minutes), date (ISO 8601)
+- `renderFeedPosts()` — loops over `feedPosts`, builds each `<article>` with `document.createElement`, appends to `.activity-feed`
+- Stub functions for `startFlowtime()` and `startFeynman()` (deferred to Phase 5)
 
 **Pending:**
-- Dummy JS array for sessions + `renderSessions()` with `document.createElement`
 - Phase 3: Express server, REST API, `fetch()` integration
 - Phase 4: WebSockets, PWA, PostgreSQL/Prisma
+- Phase 5: Flowtime and Feynman techniques
 
 ## Key JS State Variables
 

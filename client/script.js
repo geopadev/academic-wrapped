@@ -25,35 +25,6 @@ const BREAKS = {
   pomodoro: { short: 300, long: 900 },
 };
 
-const feedPosts = [
-  {
-    avatar: "url",
-    username: "John Doe",
-    action: "completed a pomodoro session",
-    subject: "maths",
-    duration: 25,
-    date: "2023-10-10T14:30:00Z",
-  },
-
-  {
-    avatar: "url",
-    username: "Jane Smith",
-    action: "started a flowtime session",
-    subject: "history",
-    duration: 45,
-    date: "2023-10-11T14:30:00Z",
-  },
-
-  {
-    avatar: "url",
-    username: "Alice Johnson",
-    action: "completed a feynman session",
-    subject: "physics",
-    duration: 30,
-    date: "2023-10-12T14:30:00Z",
-  },
-];
-
 function showView(viewId) {
   for (const view of views) {
     view.classList.add("view--hidden");
@@ -175,8 +146,11 @@ function playBeep() {
   sound.stop(audioContext.currentTime + 0.3);
 }
 
-function renderFeedPosts() {
-  for (const post of feedPosts) {
+async function renderFeedPosts() {
+  const response = await fetch("/api/sessions");
+  const data = await response.json();
+
+  for (const post of data) {
     const feedPost = document.createElement("article");
     feedPost.classList.add("activity-feed__post");
 
