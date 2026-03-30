@@ -41,11 +41,11 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 ## Phase 3: The Backend Server & API
 
-- [ ] Refactor `server/server.js` to serve static files from the `client` folder.
-- [ ] Create `server/data.json` to act as a temporary dummy database.
-- [ ] Write a `GET /api/sessions` Express route to send session data to the client.
-- [ ] Write a `POST /api/sessions` Express route to save a new completed focus session.
-- [ ] Update `client/script.js` to use the `fetch()` API to talk to these endpoints.
+- [x] Refactor `server.mjs` to serve static files from the `client` folder.
+- [x] Create `data.json` to act as a temporary dummy database.
+- [x] Write a `GET /api/sessions` Express route to send session data to the client.
+- [x] Write a `POST /api/sessions` Express route to save a new completed focus session.
+- [x] Update `client/script.js` to use the `fetch()` API to talk to these endpoints.
 
 ## Phase 4: Real-Time & Advanced Features
 
