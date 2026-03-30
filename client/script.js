@@ -224,5 +224,13 @@ function renderFeedPosts() {
   }
 }
 
+function startFeynman() {
+  console.log("feynman not yet implemented");
+}
+
+function startFlowtime() {
+  console.log("flowtime not yet implemented");
+}
+
 showView("view-home");
 renderFeedPosts();
