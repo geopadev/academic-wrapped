@@ -116,6 +116,7 @@ function startTicking() {
       switch (currentPhase) {
         case "work":
           completedSessions++;
+          postSession();
           if (completedSessions % 4 === 0) {
             timeRemaining = BREAKS.pomodoro.long;
           } else {
@@ -207,6 +208,23 @@ function startFeynman() {
 
 function startFlowtime() {
   console.log("flowtime not yet implemented");
+}
+
+async function postSession() {
+  const newSession = {
+    avatar: "url",
+    username: "me",
+    action: "completed a pomodoro session",
+    subject: subject,
+    duration: DURATIONS.pomodoro / 60,
+    date: new Date().toISOString(),
+  };
+
+  await fetch("/api/sessions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newSession),
+  });
 }
 
 showView("view-home");

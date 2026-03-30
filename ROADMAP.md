@@ -57,3 +57,4 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 - [ ] Implement Flowtime technique (count-up timer + scaled break suggestions based on elapsed time).
 - [ ] Implement Feynman technique (4-step guided checklist with checkboxes, no timer).
+- [ ] Richer session objects — capture total work time, total break time, number of sessions. User chooses public (visible on Explore + Profile) or private (Profile only).
