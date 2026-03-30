@@ -36,8 +36,8 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 - [x] Build Navigation Logic: select all nav buttons with `querySelectorAll`, attach click listeners, use "hide all then show one" pattern with `data-target` to toggle `.view--hidden`.
 - [x] Build Timer Modal Logic: open modal when `+` button is clicked (remove `.timer-modal--hidden`), close when backdrop is clicked or modal is dismissed.
 - [x] Build the Focus Timer: Pomodoro countdown with `setInterval`, phase transitions (work→break→work), long break every 4 sessions, audio notification via Web Audio API. Timer displays in site header; CTA button doubles as stop button. (Flowtime & Feynman deferred to Phase 5.)
-- [ ] Create a dummy JS array for past study sessions and friend activity posts.
-- [ ] Write a `renderSessions()` function to dynamically generate `<article>` HTML for each session and inject into the Explore view using `document.createElement`.
+- [x] Create a dummy JS array for past study sessions and friend activity posts.
+- [x] Write a `renderFeedPosts()` function to dynamically generate `<article>` HTML for each session and inject into the Explore view using `document.createElement`.
 
 ## Phase 3: The Backend Server & API
 
