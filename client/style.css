@@ -151,6 +151,14 @@ canvas {
   display: none;
 }
 
+.activity-feed--hidden {
+  display: none;
+}
+
+.activity-feed__error--hidden {
+  display: none;
+}
+
 .bottom-nav__item--active .bottom-nav__link {
   color: var(--color-primary);
 }

@@ -49,7 +49,7 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 ## Phase 3.1: Hardening & Modularisation
 
-- [ ] **[HIGH]** Add `response.ok` check and fallback to `renderFeedPosts()`.
+- [x] **[HIGH]** Add `response.ok` check and fallback to `renderFeedPosts()`.
 - [ ] **[HIGH]** Add `response.ok` check to `postSession()` and re-render feed after successful POST.
 - [ ] **[HIGH]** Add `try/catch` to `server.mjs` file operations with appropriate HTTP error status codes.
 - [ ] **[MEDIUM]** Fix subject scope — capture `#subject-input` value and store in module-level variable when timer starts.

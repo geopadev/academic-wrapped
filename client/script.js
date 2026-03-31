@@ -8,6 +8,7 @@ const timerModalForm = document.querySelector(".timer-modal__form");
 const siteHeaderCountdown = document.querySelector(".site-header__countdown");
 const siteHeaderTitle = document.querySelector(".site-header__title");
 const activityFeed = document.querySelector(".activity-feed");
+const activityFeedError = document.querySelector(".activity-feed__error");
 
 let timeRemaining = 0;
 let intervalId = null;
@@ -152,6 +153,14 @@ function playBeep() {
 
 async function renderFeedPosts() {
   const response = await fetch("/api/sessions");
+
+  if (!response.ok) {
+    activityFeedError.textContent = "COULD NOT LOAD FEED POSTS!";
+    showElement(activityFeedError, "activity-feed__error--hidden");
+    hideElement(activityFeed, "activity-feed--hidden");
+    return;
+  }
+
   const data = await response.json();
 
   for (const post of data) {
