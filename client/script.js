@@ -229,11 +229,17 @@ async function postSession() {
     date: new Date().toISOString(),
   };
 
-  await fetch("/api/sessions", {
+  const response = await fetch("/api/sessions", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newSession),
   });
+
+  if (!response.ok) {
+    siteHeaderCountdown.textContent = "COULD NOT POST SESSION!";
+    return;
+  }
+  renderFeedPosts();
 }
 
 showView("view-home");
