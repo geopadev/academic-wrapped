@@ -162,7 +162,7 @@ async function renderFeedPosts() {
   }
 
   const data = await response.json();
-
+  activityFeed.textContent = "";
   for (const post of data) {
     const feedPost = document.createElement("article");
     feedPost.classList.add("activity-feed__post");
