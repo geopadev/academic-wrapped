@@ -51,7 +51,7 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 - [x] **[HIGH]** Add `response.ok` check and fallback to `renderFeedPosts()`.
 - [x] **[HIGH]** Add `response.ok` check to `postSession()` and re-render feed after successful POST.
-- [ ] **[HIGH]** Add `try/catch` to `server.mjs` file operations with appropriate HTTP error status codes.
+- [x] **[HIGH]** Add `try/catch` to `server.mjs` file operations with appropriate HTTP error status codes.
 - [ ] **[MEDIUM]** Fix subject scope — capture `#subject-input` value and store in module-level variable when timer starts.
 - [ ] **[MEDIUM]** Clear `.activity-feed` before re-rendering in `renderFeedPosts()` to prevent duplicate posts.
 - [ ] **[MEDIUM]** Modularise `client/script.js` into ES6 modules: `js/timer.js`, `js/navigation.js`, `js/api.js`, `js/app.js`.
