@@ -19,7 +19,7 @@ app.post("/api/sessions", async (req, res) => {
     const sessionData = await readFile("data.json", "utf-8");
     const sessions = JSON.parse(sessionData);
     sessions.push(req.body);
-    await writeFile("data.json", JSON.stringify(sessions));
+    await writeFile("data.json", JSON.stringify(sessions, null, 2));
     res.json(req.body);
   } catch (error) {
     res.status(500).json("could not save sessions");

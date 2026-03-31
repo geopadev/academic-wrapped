@@ -12,9 +12,16 @@ Pure client-side SPA with no build step. Open `client/index.html` directly in a 
 
 ```
 client/
-  index.html   — single HTML file, no <html>/<head>/<body> tags (HTML5 optional syntax, intentional)
-  style.css    — all styles, BEM naming, CSS custom properties in :root
-  script.js    — all JS, type="module", no bundler
+  index.html        — single HTML file, no <html>/<head>/<body> tags (HTML5 optional syntax, intentional)
+  style.css         — all styles, BEM naming, CSS custom properties in :root
+  js/
+    app.js          — entry point, imports and initialises all modules
+    timer.js        — Pomodoro logic, state variables, setupTimer()
+    navigation.js   — showView(), setupNavigation()
+    api.js          — renderFeedPosts(), postSession()
+    utils.js        — showElement(), hideElement()
+server.mjs          — Express server, GET/POST /api/sessions, static file serving
+data.json           — persistent session store (temporary, replaces with PostgreSQL in Phase 4)
 ```
 
 The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--hidden` (`display: none`). `showView(id)` hides all views then removes the hidden class from the target.
@@ -31,7 +38,7 @@ The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--
 
 **Semantic HTML:** Use `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>` appropriately.
 
-## Current State (Phase 2 complete, Phase 3 starting)
+## Current State (Phase 3 complete, Phase 3.1 complete)
 
 **Done:**
 - Full mobile UI shell (fixed header, bottom tab nav, scrollable main, timer modal)
@@ -40,13 +47,14 @@ The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--
 - Pomodoro timer — `startPomodoro()`, `startTicking()`, phase transitions (work→break→work), `BREAKS` object, `playBeep()` via Web Audio API
 - Timer UI in header — countdown replaces title during active session, CTA button doubles as stop button via `isTimerRunning` flag
 - `formatTime(seconds)` → `MM:SS` string
-- `showElement(el, className)` / `hideElement(el, className)` helper functions
-- `feedPosts` dummy array — 3 objects with avatar, username, action, subject, duration (number, minutes), date (ISO 8601)
-- `renderFeedPosts()` — loops over `feedPosts`, builds each `<article>` with `document.createElement`, appends to `.activity-feed`
+- `showElement(el, className)` / `hideElement(el, className)` helper functions in `js/utils.js`
+- `renderFeedPosts()` — fetches from `GET /api/sessions`, builds each `<article>` with `document.createElement`, appends to `.activity-feed`
+- `postSession()` — POSTs completed session to `POST /api/sessions`, re-renders feed on success
+- Express server (`server.mjs`) with `GET /api/sessions` and `POST /api/sessions` routes, `data.json` persistence, `try/catch` error handling
+- Modular client JS: `js/app.js` (entry), `js/timer.js`, `js/navigation.js`, `js/api.js`, `js/utils.js`
 - Stub functions for `startFlowtime()` and `startFeynman()` (deferred to Phase 5)
 
 **Pending:**
-- Phase 3: Express server, REST API, `fetch()` integration
 - Phase 4: WebSockets, PWA, PostgreSQL/Prisma
 - Phase 5: Flowtime and Feynman techniques
 
