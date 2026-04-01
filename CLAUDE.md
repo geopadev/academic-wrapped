@@ -21,7 +21,7 @@ client/
     api.js          — renderFeedPosts(), postSession()
     utils.js        — showElement(), hideElement()
 server.mjs          — Express server, GET/POST /api/sessions, static file serving
-data.json           — persistent session store (temporary, replaces with PostgreSQL in Phase 4)
+data.json           — persistent session store (temporary, replaces with better-sqlite3 in Phase 4)
 ```
 
 The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--hidden` (`display: none`). `showView(id)` hides all views then removes the hidden class from the target.
@@ -54,8 +54,11 @@ The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--
 - Modular client JS: `js/app.js` (entry), `js/timer.js`, `js/navigation.js`, `js/api.js`, `js/utils.js`
 - Stub functions for `startFlowtime()` and `startFeynman()` (deferred to Phase 5)
 
+**Known issues:**
+- `DURATIONS.pomodoro` in `js/timer.js` may be set to `5` (seconds) for testing — must be restored to `1500` before submission.
+
 **Pending:**
-- Phase 4: WebSockets, PWA, PostgreSQL/Prisma
+- Phase 4: WebSockets, PWA, better-sqlite3
 - Phase 5: Flowtime and Feynman techniques
 
 ## Key JS State Variables

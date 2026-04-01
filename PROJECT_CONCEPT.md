@@ -25,7 +25,7 @@ This project is built for a strict university module and must adhere to the foll
 - **Backend:** Node.js with Express.js.
 - **Real-Time Data:** WebSockets (`ws` library) to power the "Live Studying Status".
 - **Mobile & Offline:** Must be a Progressive Web App (PWA) utilizing Service Workers, `manifest.json`, and `localStorage` for offline capabilities.
-- **Database:** PostgreSQL (accessed via Prisma ORM) to persist user, task, and session data.
+- **Database:** SQLite (accessed via better-sqlite3 with SQL migration files) to persist user, task, and session data.
 
 ## 5. Development Phases
 

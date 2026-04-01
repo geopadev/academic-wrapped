@@ -3,7 +3,7 @@ import { showElement, hideElement } from "./utils.js";
 let onSessionComplete = null;
 
 export const DURATIONS = {
-  pomodoro: 5,
+  pomodoro: 1500,
   flowtime: null,
   feynman: null,
 };
