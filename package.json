@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/geopadev/academic-wrapped#readme",
   "dependencies": {
+    "better-sqlite3": "^12.8.0",
     "express": "^5.2.1"
   }
 }
