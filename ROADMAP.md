@@ -63,7 +63,7 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 - [ ] Set up WebSockets (`ws` library) on the server to push live studying notifications to the client.
 - [ ] Add a Service Worker and `manifest.json` to make the app an installable PWA with offline support via `localStorage`.
-- [ ] (Final Step) Replace `data.json` with better-sqlite3 using SQL migration files (following the lecturer's staged-simple-message-board stage 8 pattern).
+- [x] (Final Step) Replace `data.json` with better-sqlite3 using SQL migration files (following the lecturer's staged-simple-message-board stage 8 pattern).
 
 ## Phase 5: Additional Study Techniques
 
