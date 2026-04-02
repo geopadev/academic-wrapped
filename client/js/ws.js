@@ -5,7 +5,6 @@ export function setupWebSocket() {
   socket.onmessage = (event) => {
     const message = JSON.parse(event.data);
     if (message.type === "newSession") {
-      console.log(message);
       renderFeedPosts();
     }
   };

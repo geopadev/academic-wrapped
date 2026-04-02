@@ -22,9 +22,8 @@ app.get("/api/sessions", (req, res) => {
 app.post("/api/sessions", (req, res) => {
   try {
     addSession(req.body);
-    console.log("POST received");
+
     for (const client of wss.clients) {
-      console.log("readyState:", client.readyState, "OPEN:", WebSocket.OPEN);
       if (client.readyState === WebSocket.OPEN) {
         console.log("broadcasting to", wss.clients.size, "clients");
         client.send(JSON.stringify({ type: "newSession", data: req.body }));
