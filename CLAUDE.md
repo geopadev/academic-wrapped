@@ -38,7 +38,7 @@ The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--
 
 **Semantic HTML:** Use `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>` appropriately.
 
-## Current State (Phase 3 complete, Phase 3.1 complete)
+## Current State (Phase 4 complete)
 
 **Done:**
 - Full mobile UI shell (fixed header, bottom tab nav, scrollable main, timer modal)
@@ -58,7 +58,6 @@ The SPA pattern: all views exist in the HTML simultaneously, hidden via `.view--
 - `DURATIONS.pomodoro` in `js/timer.js` may be set to `5` (seconds) for testing — must be restored to `1500` before submission.
 
 **Pending:**
-- Phase 4: WebSockets, PWA, better-sqlite3
 - Phase 5: Flowtime and Feynman techniques
 
 ## Key JS State Variables
