@@ -1,4 +1,4 @@
-const CACHE_NAME = "academic-wrapped-cache-v4";
+const CACHE_NAME = "academic-wrapped-cache-v5";
 const urlsToCache = [
   "/",
   "/style.css",
@@ -10,6 +10,7 @@ const urlsToCache = [
   "/js/ws.js",
   "/js/sw-register.js",
   "/js/components/feed-post.mjs",
+  "/js/components/goal-card.mjs",
 ];
 
 self.addEventListener("install", (event) => {

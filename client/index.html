@@ -95,32 +95,9 @@
   <section class="view view--goals" id="view-goals">
     <h2 class="view__title">Your Goals</h2>
     <ul class="goals-list">
-      <li class="goals-list__item">
-        <h3 class="goals-list__item-title">Read 5 Books This Month</h3>
-        <progress
-          value="3"
-          max="5"
-          class="goals-list__item-progress"
-        ></progress>
-      </li>
-
-      <li class="goals-list__item">
-        <h3 class="goals-list__item-title">Complete 20 Pomodoro Sessions</h3>
-        <progress
-          value="12"
-          max="20"
-          class="goals-list__item-progress"
-        ></progress>
-      </li>
-
-      <li class="goals-list__item">
-        <h3 class="goals-list__item-title">Write 10,000 Words</h3>
-        <progress
-          value="7"
-          max="10"
-          class="goals-list__item-progress"
-        ></progress>
-      </li>
+      <goal-card title="Read 10 Books" value="3" max="10"></goal-card>
+      <goal-card title="Study 100 Hours" value="45" max="100"></goal-card>
+      <goal-card title="Complete 5 Pomodoro Sessions" value="2" max="5"></goal-card>
     </ul>
   </section>
 
@@ -234,7 +211,7 @@
 
 <template id="feed-post-template">
   <article class="activity-feed__post">
-    <img class="activity-feed__post-avatar" alt="">
+    <img class="activity-feed__post-avatar" alt="" />
     <p class="activity-feed__post-username"></p>
     <p class="activity-feed__post-action"></p>
     <p class="activity-feed__post-subject"></p>
@@ -242,5 +219,13 @@
     <time class="activity-feed__post-datetime"></time>
   </article>
 </template>
+
+<template id="goal-card-template">
+  <li class="goals-list__item">
+    <h3 class="goals-list__item-title"></h3>
+    <progress class="goals-list__item-progress" value="" max=""></progress>
+  </li>
+</template>
 <script type="module" src="js/components/feed-post.mjs"></script>
+<script type="module" src="js/components/goal-card.mjs"></script>
 <script type="module" src="js/app.js"></script>
