@@ -1,12 +1,14 @@
+import { hideElement, showElement } from "./utils.js";
+
 const views = document.querySelectorAll(".view");
 const navLinks = document.querySelectorAll(".bottom-nav__link");
 
 export function showView(viewId) {
   for (const view of views) {
-    view.classList.add("view--hidden");
+    hideElement(view, "view--hidden");
   }
   const targetView = document.getElementById(viewId);
-  targetView.classList.remove("view--hidden");
+  showElement(targetView, "view--hidden");
 }
 
 export function setupNavigation() {

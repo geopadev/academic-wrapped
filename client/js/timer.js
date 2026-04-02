@@ -110,7 +110,7 @@ export function setupTimer() {
       hideElement(siteHeaderCountdown, "site-header__countdown--hidden");
       ctaButton.textContent = "+";
     } else {
-      timerModal.classList.remove("timer-modal--hidden");
+      showElement(timerModal, "timer-modal--hidden");
     }
   });
   timerModalStart.addEventListener("click", (event) => {
@@ -134,6 +134,6 @@ export function setupTimer() {
   });
 
   timerModalBackdrop.addEventListener("click", (event) => {
-    timerModal.classList.add("timer-modal--hidden");
+    hideElement(timerModal, "timer-modal--hidden");
   });
 }
