@@ -65,14 +65,14 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 - [x] Add a Service Worker and `manifest.json` to make the app an installable PWA with offline support via `localStorage`.
 - [x] (Final Step) Replace `data.json` with better-sqlite3 using SQL migration files (following the lecturer's staged-simple-message-board stage 8 pattern).
 
-## Phase 5: Web Components & Templates _(Curriculum: Weeks 6–7 — Custom Elements, Shadow DOM, Templates)_
+## Phase 5: Web Components & Templates _(Curriculum: Weeks 6–7 — Custom Elements, Shadow DOM, Templates)_ ✅ COMPLETE
 
-- [ ] Refactor the activity feed post into a `<feed-post>` Custom Element (`customElements.define`, `class extends HTMLElement`).
-- [ ] Add a `<template id="feed-post-template">` in `index.html` for the feed post markup. Clone it with `template.content.cloneNode(true)` inside the component.
-- [ ] Attach Shadow DOM to `<feed-post>` with `attachShadow({ mode: 'open' })` and add scoped styles inside it.
-- [ ] Implement `connectedCallback` and `attributeChangedCallback` lifecycle methods on `<feed-post>`.
-- [ ] Refactor the goals list item into a `<goal-card>` Custom Element using the same template + Shadow DOM pattern.
-- [ ] Reference: lecturer's `custom-elements` repo (examples 0–8) and staged-simple-message-board stages 9–10.
+- [x] Refactor the activity feed post into a `<feed-post>` Custom Element (`customElements.define`, `class extends HTMLElement`).
+- [x] Add a `<template id="feed-post-template">` in `index.html` for the feed post markup. Clone it with `template.content.cloneNode(true)` inside the component.
+- [x] Attach Shadow DOM to `<feed-post>` with `attachShadow({ mode: 'open' })` and add scoped styles inside it.
+- [x] Implement `connectedCallback` and `attributeChangedCallback` lifecycle methods on `<feed-post>`.
+- [x] Refactor the goals list item into a `<goal-card>` Custom Element using the same template + Shadow DOM pattern.
+- [x] Reference: lecturer's `custom-elements` repo (examples 0–8) and staged-simple-message-board stages 9–10.
 
 ## Phase 6: Authentication & User Profiles _(Curriculum: localStorage — Week 5, History API — Week 8, REST API design — Week 6)_
 
