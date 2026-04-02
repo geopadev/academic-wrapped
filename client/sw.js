@@ -1,4 +1,4 @@
-const CACHE_NAME = "academic-wrapped-cache-v1";
+const CACHE_NAME = "academic-wrapped-cache-v4";
 const urlsToCache = [
   "/",
   "/style.css",
@@ -9,9 +9,11 @@ const urlsToCache = [
   "/js/utils.js",
   "/js/ws.js",
   "/js/sw-register.js",
+  "/js/components/feed-post.mjs",
 ];
 
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("Opened cache");
@@ -36,11 +38,11 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     (async () => {
-        if (event.request.url.includes("/api/")) {
-            return fetch(event.request);
-        }
-        const cached = await caches.match(event.request);
-        return cached || fetch(event.request);
-    })()
+      if (event.request.url.includes("/api/")) {
+        return fetch(event.request);
+      }
+      const cached = await caches.match(event.request);
+      return cached || fetch(event.request);
+    })(),
   );
 });

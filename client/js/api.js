@@ -17,49 +17,14 @@ export async function renderFeedPosts() {
   const data = await response.json();
   activityFeed.textContent = "";
   for (const post of data) {
-    const feedPost = document.createElement("article");
-    feedPost.classList.add("activity-feed__post");
-
-    const feedPostAvatar = document.createElement("img");
-    feedPostAvatar.classList.add("activity-feed__post-avatar");
-    feedPostAvatar.setAttribute("src", post.avatar);
-
-    const feedPostName = document.createElement("p");
-    feedPostName.classList.add("activity-feed__post-name");
-    const feedPostUsername = document.createElement("strong");
-    feedPostUsername.textContent = post.username;
-
-    const feedPostAction = document.createElement("p");
-    feedPostAction.classList.add("activity-feed__post-action");
-    feedPostAction.textContent = post.action;
-
-    const feedPostSubj = document.createElement("p");
-    feedPostSubj.classList.add("activity-feed__post-subject");
-    feedPostSubj.textContent = `Subject: ${post.subject}`;
-
-    const feedPostDuration = document.createElement("p");
-    feedPostDuration.classList.add("activity-feed__post-duration");
-    feedPostDuration.textContent = `Duration: ${post.duration} minutes`;
-
-    const feedPostTime = document.createElement("time");
-    feedPostTime.classList.add("activity-feed__post-datetime");
-    feedPostTime.setAttribute("datetime", post.date);
-    feedPostTime.textContent = new Date(post.date).toLocaleDateString("en-GB", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
-    feedPostName.appendChild(feedPostUsername);
-    feedPost.append(
-      feedPostAvatar,
-      feedPostName,
-      feedPostAction,
-      feedPostSubj,
-      feedPostDuration,
-      feedPostTime,
-    );
-
+    
+    const feedPost = document.createElement("feed-post");
+    feedPost.setAttribute("avatar", post.avatar);
+    feedPost.setAttribute("username", post.username);
+    feedPost.setAttribute("action", post.action);
+    feedPost.setAttribute("subject", post.subject);
+    feedPost.setAttribute("duration", post.duration);
+    feedPost.setAttribute("date", post.date);
     activityFeed.appendChild(feedPost);
   }
 }
