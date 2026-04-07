@@ -1,4 +1,4 @@
-const CACHE_NAME = "academic-wrapped-cache-v6";
+const CACHE_NAME = "academic-wrapped-cache-v7";
 const urlsToCache = [
   "/",
   "/style.css",

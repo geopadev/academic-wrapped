@@ -4,6 +4,13 @@ const viewAuthError = document.querySelector(".view-auth__error");
 const viewAuthLogin = document.querySelector(".view-auth__login");
 const viewAuthRegister = document.querySelector(".view-auth__register");
 const viewAuthToggle = document.querySelector("#view-auth__toggle");
+const profileLogout = document.querySelector("#profile-logout");
+export function setupLogout() {
+  profileLogout.addEventListener("click", (event) => {
+    localStorage.removeItem("user");
+    location.reload();
+  });
+}
 
 export function setupAuth(onLogin) {
   viewAuthLogin.addEventListener("submit", async (event) => {
