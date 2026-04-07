@@ -1,6 +1,40 @@
-const viewAuthError = document.querySelector(".view-auth__error");
+import { hideElement, showElement } from "./utils.js";
 
-export function setupAuth() {}
+const viewAuthError = document.querySelector(".view-auth__error");
+const viewAuthLogin = document.querySelector(".view-auth__login");
+const viewAuthRegister = document.querySelector(".view-auth__register");
+const viewAuthToggle = document.querySelector("#view-auth__toggle");
+
+export function setupAuth(onLogin) {
+  viewAuthLogin.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const username = document.querySelector("#auth-login-username").value;
+    const password = document.querySelector("#auth-login-password").value;
+
+    const user = await login(username, password);
+    if (user) onLogin();
+  });
+
+  viewAuthRegister.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const username = document.querySelector("#auth-register-username").value;
+    const email = document.querySelector("#auth-register-email").value;
+    const password = document.querySelector("#auth-register-password").value;
+
+    const user = await register(username, email, password);
+    if (user) onLogin();
+  });
+
+  viewAuthToggle.addEventListener("click", (event) => {
+    if (!viewAuthLogin.classList.contains("view--hidden")) {
+      hideElement(viewAuthLogin, "view--hidden");
+      showElement(viewAuthRegister, "view--hidden");
+    } else {
+      hideElement(viewAuthRegister, "view--hidden");
+      showElement(viewAuthLogin, "view--hidden");
+    }
+  });
+}
 
 export async function register(username, email, password) {
   const newRegister = {
