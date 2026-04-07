@@ -9,6 +9,7 @@ export function getSessions() {
 }
 
 export function addSession(session) {
-    db.prepare("INSERT INTO sessions (avatar, username, action, subject, duration, date) VALUES (@avatar, @username, @action, @subject, @duration, @date)"
-).run(session)
+  db.prepare(
+    "INSERT INTO sessions (avatar, username, action, subject, duration, date) VALUES (@avatar, @username, @action, @subject, @duration, @date)",
+  ).run(session);
 }

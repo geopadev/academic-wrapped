@@ -97,7 +97,11 @@
     <ul class="goals-list">
       <goal-card title="Read 10 Books" value="3" max="10"></goal-card>
       <goal-card title="Study 100 Hours" value="45" max="100"></goal-card>
-      <goal-card title="Complete 5 Pomodoro Sessions" value="2" max="5"></goal-card>
+      <goal-card
+        title="Complete 5 Pomodoro Sessions"
+        value="2"
+        max="5"
+      ></goal-card>
     </ul>
   </section>
 
@@ -126,6 +130,59 @@
         <dd class="profile-stats__definition">The Night Owl 🦉</dd>
       </dl>
     </article>
+  </section>
+
+  <section id="view-auth" class="view view--auth">
+    <form class="view-auth__login">
+      <label for="auth-login-username">
+        Enter Username
+        <input
+          type="text"
+          id="auth-login-username"
+          placeholder="Enter username"
+        />
+      </label>
+      <label for="auth-login-password">
+        Enter Password
+        <input
+          type="password"
+          id="auth-login-password"
+          placeholder="Enter password"
+        />
+      </label>
+      <button type="submit">Log in</button>
+    </form>
+    <form class="view-auth__register view--hidden">
+      <label for="auth-register-username">
+        Enter Username
+        <input
+          type="text"
+          id="auth-register-username"
+          placeholder="Enter username"
+        />
+      </label>
+      <label for="auth-register-email">
+        Enter email
+        <input
+          type="email"
+          id="auth-register-email"
+          placeholder="enter your email"
+        />
+      </label>
+      <label for="auth-register-password">
+        Enter Password
+        <input
+          type="password"
+          id="auth-register-password"
+          placeholder="Enter password"
+        />
+      </label>
+      <button type="submit">Register</button>
+    </form>
+    <p class="view-auth__error"></p>
+    <button id="view-auth__toggle" type="button">
+      Don't have an account? Register
+    </button>
   </section>
 </main>
 <footer class="site-footer">

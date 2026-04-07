@@ -76,8 +76,8 @@ _Rule: Strict modern JS only. No `var`. No frameworks. Use `const`/`let`, `fetch
 
 ## Phase 6: Authentication & User Profiles _(Curriculum: localStorage — Week 5, History API — Week 8, REST API design — Week 6)_
 
-- [ ] Add a `users` table to SQLite (id, username, email, password_hash, avatar_url, bio, created_at).
-- [ ] Build login and register views in `index.html` with semantic `<form>` elements.
+- [x] Add a `users` table to SQLite (id, username, email, password_hash).
+- [x] Build login and register views in `index.html` with semantic `<form>` elements.
 - [ ] Implement simple session auth using `localStorage` to store a session token (`setItem`, `getItem`, `removeItem`, `JSON.parse`/`JSON.stringify`).
 - [ ] Add History API support: `history.pushState()` on view changes, `window.onpopstate` to handle browser back/forward buttons. Reference: lecturer's Simple SPA.
 - [ ] Build the complete profile view: editable username, bio, avatar upload (base64 or file path), stats display (total hours, sessions logged, favourite subject, streak — queried from SQLite).
